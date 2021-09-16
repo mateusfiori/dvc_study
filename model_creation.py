@@ -1,6 +1,6 @@
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression, SGDClassifier
 from sklearn.metrics import accuracy_score
 from joblib import dump
 
@@ -18,8 +18,10 @@ def split_data(data):
     )
 
 def train_model(X_train, X_test, y_train, y_test):
-    clf = LogisticRegression(random_state=0) \
-        .fit(X_train, y_train)
+    clf = SGDClassifier(
+        max_iter=1000, 
+        tol=1e-3
+    ).fit(X_train, y_train)
     
     y_pred = clf.predict(X_test)
 
