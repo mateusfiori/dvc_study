@@ -17,7 +17,16 @@ pip install dvc
 ```
 
 Obs: I suggest using venv or conda as a python environment.
-    
+
+
+To generate a model file execute the following instruction.
+
+```
+python model_creation.py -s [--save]
+```
+
+Obs: If the -s flag was omitted the model won't be persisted. 
+
 ### Usage/Examples
 
 Follow the commands below to init the GIT and DVC repository.
